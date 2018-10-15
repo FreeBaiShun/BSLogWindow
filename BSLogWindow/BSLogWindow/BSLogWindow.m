@@ -7,7 +7,7 @@
 //
 
 #import "BSLogWindow.h"
-#import <WMDragView.h>
+#import <WMDragView/WMDragView.h>
 
 #define kSereenWidth [UIScreen mainScreen].bounds.size.width
 #define kSereenHeight [UIScreen mainScreen].bounds.size.height
