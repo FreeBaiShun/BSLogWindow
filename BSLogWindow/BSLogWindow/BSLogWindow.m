@@ -207,28 +207,26 @@ static BSLogWindow *instance = nil;
  hook NSLog部分
  */
 
-//方案1. 通过c语言中dup2函数映射到pipe端口，监听端口读取打印的文字显示在界面上。
-- (void)redirectSTD:(int )fd{
-    NSPipe * pipe = [NSPipe pipe] ;
-        NSFileHandle *pipeReadHandle = [pipe fileHandleForReading] ;
-     int pipeFileHandle = [[pipe fileHandleForWriting] fileDescriptor];
-     dup2(pipeFileHandle, fd);
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(redirectNotificationHandle:)
-            name:NSFileHandleReadCompletionNotification
-                                                   object:pipeReadHandle] ;
-        [pipeReadHandle readInBackgroundAndNotify];
+//通过c语言中dup2函数映射到pipe端口，监听端口读取打印的文字显示在界面上。
+- (void)redirectSTD:(int)fd{
+    NSPipe * pipe = [NSPipe pipe];
+    NSFileHandle *pipeReadHandle = [pipe fileHandleForReading];
+    int pipeFileHandle = [[pipe fileHandleForWriting] fileDescriptor];
+    dup2(pipeFileHandle, fd);
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(redirectNotificationHandle:)name:NSFileHandleReadCompletionNotification
+                                                   object:pipeReadHandle];
+    [pipeReadHandle readInBackgroundAndNotify];
 }
-- (void)redirectNotificationHandle:(NSNotification *)nf{
-        NSData *data = [[nf userInfo] objectForKey:NSFileHandleNotificationDataItem];
-        NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] ;
+- (void)redirectNotificationHandle:(NSNotification *)nf{
+    NSData *data = [[nf userInfo] objectForKey:NSFileHandleNotificationDataItem];
+     NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         printf("%s", [str UTF8String]);
         [BSLogWindow printLog:str];
     if(self.printBlock){
         self.printBlock(str);
     }
-    
-        [[nf object] readInBackgroundAndNotify];
+    [[nf object] readInBackgroundAndNotify];
 }
 
 
