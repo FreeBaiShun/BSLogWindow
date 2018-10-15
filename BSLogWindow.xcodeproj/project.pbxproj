@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1444AFD38CD0FB66C6DD8806 /* libPods-BSLogWindowTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C258F4A74190531CF3B6EA /* libPods-BSLogWindowTests.a */; };
 		33ED122B2174AE3300335808 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33ED122A2174AE3300335808 /* AppDelegate.m */; };
 		33ED122E2174AE3300335808 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33ED122D2174AE3300335808 /* ViewController.m */; };
 		33ED12312174AE3300335808 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33ED122F2174AE3300335808 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 		33ED12392174AE3300335808 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33ED12382174AE3300335808 /* main.m */; };
 		33ED12432174AE3300335808 /* BSLogWindowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 33ED12422174AE3300335808 /* BSLogWindowTests.m */; };
 		33ED124E2174AE3300335808 /* BSLogWindowUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 33ED124D2174AE3300335808 /* BSLogWindowUITests.m */; };
+		33ED125D2174AE5800335808 /* BSLogWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 33ED125B2174AE5800335808 /* BSLogWindow.m */; };
+		40C0FB7D3EAC6E335FE67587 /* libPods-BSLogWindow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC3A9F43AA9F7B262D30667 /* libPods-BSLogWindow.a */; };
+		4B8C7462DCCF958D852BB753 /* libPods-BSLogWindowUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 217AAA671B8A21C98F4F7C93 /* libPods-BSLogWindowUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EFD67B982242355A4276131 /* Pods-BSLogWindowUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSLogWindowUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BSLogWindowUITests/Pods-BSLogWindowUITests.release.xcconfig"; sourceTree = "<group>"; };
+		17497020F5F9BF95EB8D3020 /* Pods-BSLogWindowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSLogWindowTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSLogWindowTests/Pods-BSLogWindowTests.debug.xcconfig"; sourceTree = "<group>"; };
+		217AAA671B8A21C98F4F7C93 /* libPods-BSLogWindowUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSLogWindowUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33ED12262174AE3300335808 /* BSLogWindow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSLogWindow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33ED12292174AE3300335808 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		33ED122A2174AE3300335808 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +58,14 @@
 		33ED12492174AE3300335808 /* BSLogWindowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BSLogWindowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33ED124D2174AE3300335808 /* BSLogWindowUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSLogWindowUITests.m; sourceTree = "<group>"; };
 		33ED124F2174AE3300335808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33ED125B2174AE5800335808 /* BSLogWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSLogWindow.m; sourceTree = "<group>"; };
+		33ED125C2174AE5800335808 /* BSLogWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSLogWindow.h; sourceTree = "<group>"; };
+		54FD9A53E77FD02E3177D853 /* Pods-BSLogWindow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSLogWindow.release.xcconfig"; path = "Pods/Target Support Files/Pods-BSLogWindow/Pods-BSLogWindow.release.xcconfig"; sourceTree = "<group>"; };
+		56C258F4A74190531CF3B6EA /* libPods-BSLogWindowTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSLogWindowTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1437BC89D653C0CA766940E /* Pods-BSLogWindow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSLogWindow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSLogWindow/Pods-BSLogWindow.debug.xcconfig"; sourceTree = "<group>"; };
+		BFC3A9F43AA9F7B262D30667 /* libPods-BSLogWindow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSLogWindow.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6F5CC92F11B521D90962D72 /* Pods-BSLogWindowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSLogWindowTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BSLogWindowTests/Pods-BSLogWindowTests.release.xcconfig"; sourceTree = "<group>"; };
+		F24412C20007B6EA55FD010D /* Pods-BSLogWindowUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSLogWindowUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSLogWindowUITests/Pods-BSLogWindowUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40C0FB7D3EAC6E335FE67587 /* libPods-BSLogWindow.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1444AFD38CD0FB66C6DD8806 /* libPods-BSLogWindowTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B8C7462DCCF958D852BB753 /* libPods-BSLogWindowUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +103,8 @@
 				33ED12412174AE3300335808 /* BSLogWindowTests */,
 				33ED124C2174AE3300335808 /* BSLogWindowUITests */,
 				33ED12272174AE3300335808 /* Products */,
+				37A6FFB7333D2A05F7588FD5 /* Pods */,
+				3696B0C1A890D523D8E159F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +121,8 @@
 		33ED12282174AE3300335808 /* BSLogWindow */ = {
 			isa = PBXGroup;
 			children = (
+				33ED125C2174AE5800335808 /* BSLogWindow.h */,
+				33ED125B2174AE5800335808 /* BSLogWindow.m */,
 				33ED12292174AE3300335808 /* AppDelegate.h */,
 				33ED122A2174AE3300335808 /* AppDelegate.m */,
 				33ED122C2174AE3300335808 /* ViewController.h */,
@@ -132,6 +154,29 @@
 			path = BSLogWindowUITests;
 			sourceTree = "<group>";
 		};
+		3696B0C1A890D523D8E159F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFC3A9F43AA9F7B262D30667 /* libPods-BSLogWindow.a */,
+				56C258F4A74190531CF3B6EA /* libPods-BSLogWindowTests.a */,
+				217AAA671B8A21C98F4F7C93 /* libPods-BSLogWindowUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		37A6FFB7333D2A05F7588FD5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B1437BC89D653C0CA766940E /* Pods-BSLogWindow.debug.xcconfig */,
+				54FD9A53E77FD02E3177D853 /* Pods-BSLogWindow.release.xcconfig */,
+				17497020F5F9BF95EB8D3020 /* Pods-BSLogWindowTests.debug.xcconfig */,
+				E6F5CC92F11B521D90962D72 /* Pods-BSLogWindowTests.release.xcconfig */,
+				F24412C20007B6EA55FD010D /* Pods-BSLogWindowUITests.debug.xcconfig */,
+				0EFD67B982242355A4276131 /* Pods-BSLogWindowUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,6 +184,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33ED12522174AE3300335808 /* Build configuration list for PBXNativeTarget "BSLogWindow" */;
 			buildPhases = (
+				F4511248DC7DEE86552096A6 /* [CP] Check Pods Manifest.lock */,
 				33ED12222174AE3300335808 /* Sources */,
 				33ED12232174AE3300335808 /* Frameworks */,
 				33ED12242174AE3300335808 /* Resources */,
@@ -156,6 +202,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33ED12552174AE3300335808 /* Build configuration list for PBXNativeTarget "BSLogWindowTests" */;
 			buildPhases = (
+				6424ED99CB2F85F4BEF8ECE3 /* [CP] Check Pods Manifest.lock */,
 				33ED123A2174AE3300335808 /* Sources */,
 				33ED123B2174AE3300335808 /* Frameworks */,
 				33ED123C2174AE3300335808 /* Resources */,
@@ -174,6 +221,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33ED12582174AE3300335808 /* Build configuration list for PBXNativeTarget "BSLogWindowUITests" */;
 			buildPhases = (
+				07956FD8CF5FBEA9F64DF227 /* [CP] Check Pods Manifest.lock */,
 				33ED12452174AE3300335808 /* Sources */,
 				33ED12462174AE3300335808 /* Frameworks */,
 				33ED12472174AE3300335808 /* Resources */,
@@ -260,6 +308,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		07956FD8CF5FBEA9F64DF227 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BSLogWindowUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6424ED99CB2F85F4BEF8ECE3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BSLogWindowTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4511248DC7DEE86552096A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BSLogWindow-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		33ED12222174AE3300335808 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -268,6 +385,7 @@
 				33ED122E2174AE3300335808 /* ViewController.m in Sources */,
 				33ED12392174AE3300335808 /* main.m in Sources */,
 				33ED122B2174AE3300335808 /* AppDelegate.m in Sources */,
+				33ED125D2174AE5800335808 /* BSLogWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +546,7 @@
 		};
 		33ED12532174AE3300335808 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1437BC89D653C0CA766940E /* Pods-BSLogWindow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -442,6 +561,7 @@
 		};
 		33ED12542174AE3300335808 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54FD9A53E77FD02E3177D853 /* Pods-BSLogWindow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -456,6 +576,7 @@
 		};
 		33ED12562174AE3300335808 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17497020F5F9BF95EB8D3020 /* Pods-BSLogWindowTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -471,6 +592,7 @@
 		};
 		33ED12572174AE3300335808 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6F5CC92F11B521D90962D72 /* Pods-BSLogWindowTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -486,6 +608,7 @@
 		};
 		33ED12592174AE3300335808 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F24412C20007B6EA55FD010D /* Pods-BSLogWindowUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TE7JH4FV3T;
@@ -500,6 +623,7 @@
 		};
 		33ED125A2174AE3300335808 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EFD67B982242355A4276131 /* Pods-BSLogWindowUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TE7JH4FV3T;

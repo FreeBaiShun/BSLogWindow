@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "BSLogWindow.h"
+
+#define ShowLogWindow 1
 
 @interface AppDelegate ()
 
@@ -16,7 +20,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    self.window = [UIWindow new];
+    self.window.rootViewController = [ViewController new];
+    [self.window makeKeyAndVisible];
+    
+#if DEBUG && ShowLogWindow
+    BSLogWindow *logWindow = [BSLogWindow sharedInstance];
+    [logWindow setHidden:NO];
+    logWindow.printBlock = ^(NSString *str) {
+        //NSLog(@"str = %@",str);
+    };
+#endif
     return YES;
 }
 
