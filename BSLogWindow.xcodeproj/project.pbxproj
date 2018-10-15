@@ -121,8 +121,7 @@
 		33ED12282174AE3300335808 /* BSLogWindow */ = {
 			isa = PBXGroup;
 			children = (
-				33ED125C2174AE5800335808 /* BSLogWindow.h */,
-				33ED125B2174AE5800335808 /* BSLogWindow.m */,
+				33ED125E2174BC6400335808 /* BSLogWindow */,
 				33ED12292174AE3300335808 /* AppDelegate.h */,
 				33ED122A2174AE3300335808 /* AppDelegate.m */,
 				33ED122C2174AE3300335808 /* ViewController.h */,
@@ -152,6 +151,15 @@
 				33ED124F2174AE3300335808 /* Info.plist */,
 			);
 			path = BSLogWindowUITests;
+			sourceTree = "<group>";
+		};
+		33ED125E2174BC6400335808 /* BSLogWindow */ = {
+			isa = PBXGroup;
+			children = (
+				33ED125C2174AE5800335808 /* BSLogWindow.h */,
+				33ED125B2174AE5800335808 /* BSLogWindow.m */,
+			);
+			path = BSLogWindow;
 			sourceTree = "<group>";
 		};
 		3696B0C1A890D523D8E159F0 /* Frameworks */ = {
@@ -314,15 +322,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BSLogWindowUITests-checkManifestLockResult.txt",
 			);
@@ -336,15 +340,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BSLogWindowTests-checkManifestLockResult.txt",
 			);
@@ -358,15 +358,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BSLogWindow-checkManifestLockResult.txt",
 			);
