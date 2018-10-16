@@ -197,18 +197,17 @@ static BSLogWindow *instance = nil;
     // attributed text
     NSMutableAttributedString* attributedString = [NSMutableAttributedString new];
     
-    double currentTimestamp = [[NSDate date] timeIntervalSince1970];
-    for (BSLogModel* log in self.logsArrM) {
+    [self.logsArrM enumerateObjectsUsingBlock:^(BSLogModel *log, NSUInteger idx, BOOL * _Nonnull stop) {
         if (log.strLog.length == 0) {
             return;
         }
         
         NSMutableAttributedString* logString = [[NSMutableAttributedString alloc] initWithString:log.strLog];
-        UIColor* logColor = currentTimestamp - log.timeStamp > 0.1 ? [UIColor whiteColor] : [UIColor yellowColor]; // yellow if new, white if more than 0.1 second ago
+        UIColor* logColor = (idx == self.logsArrM.count - 1 || idx == self.logsArrM.count - 2) ? [UIColor yellowColor] : [UIColor whiteColor]; // yellow if new, white if more than 0.1 second ago
         [logString addAttribute:NSForegroundColorAttributeName value:logColor range:NSMakeRange(0, logString.length)];
         
         [attributedString appendAttributedString:logString];
-    }
+    }];
     
     self.textView.attributedText = attributedString;
     
