@@ -7,7 +7,7 @@ s.description  = <<-DESC
 DESC
 s.homepage     = "https://github.com/FreeBaiShun"
 s.license      = "MIT"
-s.author             = { "free" => "851083075@qq.com" }
+s.author             = { "FreeBaiShun" => "851083075@qq.com" }
 s.platform     = :ios, "8.0"
 s.requires_arc = true
 s.source       = { :git => "https://github.com/FreeBaiShun/BSLogWindow.git", :tag => "#{s.version}" }

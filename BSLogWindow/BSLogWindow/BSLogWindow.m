@@ -9,10 +9,11 @@
 #import "BSLogWindow.h"
 #import <WMDragView/WMDragView.h>
 
-#define kSereenWidth [UIScreen mainScreen].bounds.size.width
-#define kSereenHeight [UIScreen mainScreen].bounds.size.height
+#define BSLogWindowSereenWidth [UIScreen mainScreen].bounds.size.width
+#define BSLogWindowSereenHeight [UIScreen mainScreen].bounds.size.height
+#define BSLogWindowIPhoneX ((BSLogWindowSereenWidth == 375.f || BSLogWindowSereenWidth == 414.f)  && (BSLogWindowSereenHeight == 812.f || BSLogWindowSereenHeight == 896.f) ? YES : NO)
+#define BSLogWindowNAVTOP (BSLogWindowIPhoneX ? 44 : 20)
 
-static BSLogWindow *logWindow = nil;
 static BSLogWindow *instance = nil;
 
 
@@ -48,11 +49,15 @@ static BSLogWindow *instance = nil;
 
 @end
 
-@implementation BSLogWindow
+@implementation BSLogWindow{
+    UITextView *textViewScreen;
+    WMDragView *viewWindowBtn;
+    UIButton *btnShow;
+}
 
 
 /**
- 单利部分
+ 单例
  */
 + (instancetype)sharedInstance{
     static dispatch_once_t onceToken;
@@ -74,40 +79,40 @@ static BSLogWindow *instance = nil;
     [self setBackgroundColor:[UIColor blackColor]];
     
     // text view
-    UITextView* textView = [[UITextView alloc] initWithFrame:self.bounds];
-    textView.font = [UIFont systemFontOfSize:15.0f];
-    textView.textColor = [UIColor whiteColor];
-    textView.backgroundColor = [UIColor clearColor];
-    textView.scrollsToTop = NO;
-    [self addSubview:textView];
-    self.textView = textView;
+    
+    if (!textViewScreen) {
+         textViewScreen = [[UITextView alloc] initWithFrame:self.bounds];
+    }
+    textViewScreen.font = [UIFont systemFontOfSize:15.0f];
+    textViewScreen.textColor = [UIColor whiteColor];
+    textViewScreen.backgroundColor = [UIColor clearColor];
+    textViewScreen.scrollsToTop = NO;
+    [self addSubview:textViewScreen];
+    self.textView = textViewScreen;
     
     //可拖拽的调试按钮
-    WMDragView *viewWindowBtn = [[WMDragView alloc] initWithFrame:CGRectMake(kSereenWidth-40, kSereenHeight/2.0-20, 40, 40)];
+    if (!viewWindowBtn) {
+        viewWindowBtn = [[WMDragView alloc] initWithFrame:CGRectMake(BSLogWindowSereenWidth-40, BSLogWindowSereenHeight/2.0-20, 40, 40)];
+    }
+    
     viewWindowBtn.layer.cornerRadius = 20.0;
     viewWindowBtn.layer.masksToBounds = YES;
     viewWindowBtn.dragEnable = YES;
     viewWindowBtn.isKeepBounds = YES;
-    viewWindowBtn.clickDragViewBlock = ^(WMDragView *dragView) {
-        CGRect rect = self.frame;
-        if (rect.size.width != 0) {
-            //有
-            self.frame = CGRectMake(0, 0, 0, 0);
-        }else{
-            self.frame = CGRectMake(0, 20, kSereenWidth, kSereenHeight/2.0+20.0);
-        }
-        
-    };
     
     UILongPressGestureRecognizer *longPressGR = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(btnShowLongClick:)];
     longPressGR.minimumPressDuration = 1.5;
     [viewWindowBtn addGestureRecognizer:longPressGR];
     
-    UIButton *btnShow = [[UIButton alloc] initWithFrame:viewWindowBtn.bounds];
+    if (!btnShow) {
+        btnShow = [[UIButton alloc] initWithFrame:viewWindowBtn.bounds];
+    }
+    
     btnShow.backgroundColor = [UIColor orangeColor];
     [btnShow setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     btnShow.titleLabel.font = [UIFont systemFontOfSize:13.0];
     [btnShow setTitle:@"日志" forState:UIControlStateNormal];
+    [btnShow addTarget:self action:@selector(btnShowClick) forControlEvents:UIControlEventTouchUpInside];
     [viewWindowBtn addSubview:btnShow];
     [window addSubview:viewWindowBtn];
     
@@ -118,6 +123,16 @@ static BSLogWindow *instance = nil;
     self.logsArrM = [NSMutableArray array];
 }
 
+//悬浮按钮被点击
+- (void)btnShowClick{
+    CGRect rect = self.frame;
+    if (rect.size.width != 0) {
+        //有
+        self.frame = CGRectMake(0, 0, 0, 0);
+    }else{
+        self.frame = CGRectMake(0, 20, BSLogWindowSereenWidth, BSLogWindowSereenHeight/2.0+BSLogWindowNAVTOP);
+    }
+}
 //悬浮按钮被长按
 - (void)btnShowLongClick:(UILongPressGestureRecognizer *)gr{
     if (gr.state==UIGestureRecognizerStateBegan) {
@@ -127,11 +142,13 @@ static BSLogWindow *instance = nil;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:CGRectMake(0, 20, kSereenWidth, kSereenHeight/2.0+20.0)];
+    self = [super initWithFrame:CGRectMake(0, 20, BSLogWindowSereenWidth, BSLogWindowSereenHeight/2.0+BSLogWindowNAVTOP)];
     if (self) {
-        logWindow = self;
-        [self setUpUI];
-        [self redirectSTD:STDERR_FILENO];
+        if ([UIApplication sharedApplication].keyWindow) {
+            [[UIApplication sharedApplication].keyWindow addObserver:self forKeyPath:@"rootViewController" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:nil];
+            [self setUpUI];
+            [self redirectSTD:STDERR_FILENO];
+        }
     }
     
     return self;
@@ -236,6 +253,13 @@ static BSLogWindow *instance = nil;
 - (void)printReturnStr:(NSString *)str{
     if (self.printBlock) {
         self.printBlock(str);
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    if (object == [UIApplication sharedApplication].keyWindow && [keyPath isEqualToString:@"rootViewController"]) {
+        [self setUpUI];
+        [self redirectSTD:STDERR_FILENO];
     }
 }
 @end
