@@ -44,8 +44,8 @@ static BSLogWindow *instance = nil;
  */
 @interface BSLogWindow()
 
-@property (weak, nonatomic) UITextView* textView;
-@property (strong, nonatomic) NSMutableArray* logsArrM;
+@property (strong, nonatomic) UITextView *textView;
+@property (strong, nonatomic) NSMutableArray *logsArrM;
 
 @end
 
@@ -74,7 +74,6 @@ static BSLogWindow *instance = nil;
 - (void)setUpUI{
     // self
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    
     [window addSubview:self];
     [self setBackgroundColor:[UIColor blackColor]];
     
@@ -85,7 +84,7 @@ static BSLogWindow *instance = nil;
     }
     textViewScreen.font = [UIFont systemFontOfSize:15.0f];
     textViewScreen.textColor = [UIColor whiteColor];
-    textViewScreen.backgroundColor = [UIColor clearColor];
+    textViewScreen.backgroundColor = [UIColor blackColor];
     textViewScreen.scrollsToTop = NO;
     [self addSubview:textViewScreen];
     self.textView = textViewScreen;
@@ -99,6 +98,10 @@ static BSLogWindow *instance = nil;
     viewWindowBtn.layer.masksToBounds = YES;
     viewWindowBtn.dragEnable = YES;
     viewWindowBtn.isKeepBounds = YES;
+    __weak typeof(self) weakSelf = self;
+    viewWindowBtn.clickDragViewBlock = ^(WMDragView *dragView) {
+        [weakSelf btnShowClick];
+    };
     
     UILongPressGestureRecognizer *longPressGR = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(btnShowLongClick:)];
     longPressGR.minimumPressDuration = 1.5;
@@ -112,7 +115,6 @@ static BSLogWindow *instance = nil;
     [btnShow setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     btnShow.titleLabel.font = [UIFont systemFontOfSize:13.0];
     [btnShow setTitle:@"日志" forState:UIControlStateNormal];
-    [btnShow addTarget:self action:@selector(btnShowClick) forControlEvents:UIControlEventTouchUpInside];
     [viewWindowBtn addSubview:btnShow];
     [window addSubview:viewWindowBtn];
     

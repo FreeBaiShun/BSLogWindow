@@ -29,7 +29,7 @@
     BSLogWindow *logWindow = [BSLogWindow sharedInstance];
     [logWindow setHidden:NO];
     logWindow.printBlock = ^(NSString *str) {
-        //NSLog(@"str = %@",str);
+      
     };
 #endif
     return YES;
