@@ -10,7 +10,7 @@
 #import "ViewController.h"
 #import "BSLogWindow.h"
 
-#define ShowLogWindow 1
+#define HiddenLogWindow 0
 
 @interface AppDelegate ()
 
@@ -25,12 +25,8 @@
     self.window.rootViewController = [ViewController new];
     [self.window makeKeyAndVisible];
     
-#if DEBUG && ShowLogWindow
-    BSLogWindow *logWindow = [BSLogWindow sharedInstance];
-    [logWindow setHidden:NO];
-    logWindow.printBlock = ^(NSString *str) {
-      
-    };
+#ifdef HiddenLogWindow
+    [[BSLogWindow sharedInstance] setHiddenWindow];
 #endif
     return YES;
 }

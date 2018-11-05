@@ -55,6 +55,16 @@ static BSLogWindow *instance = nil;
     UIButton *btnShow;
 }
 
++ (void)load{
+#if DEBUG
+    [[self class]sharedInstance];
+#endif
+}
+
+- (void)setHiddenWindow{
+    [self setHidden:YES];
+    [viewWindowBtn setHidden:YES];
+}
 
 /**
  单例
@@ -115,6 +125,7 @@ static BSLogWindow *instance = nil;
     [btnShow setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     btnShow.titleLabel.font = [UIFont systemFontOfSize:13.0];
     [btnShow setTitle:@"日志" forState:UIControlStateNormal];
+    btnShow.userInteractionEnabled = NO;
     [viewWindowBtn addSubview:btnShow];
     [window addSubview:viewWindowBtn];
     

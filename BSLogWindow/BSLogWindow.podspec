@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = "BSLogWindow"
-s.version      = "1.1.3"
+s.version      = "1.1.4"
 s.summary      = "A short description of BSLogWindow."
 s.description  = <<-DESC
                  一个用来打印信息到屏幕的小工具。

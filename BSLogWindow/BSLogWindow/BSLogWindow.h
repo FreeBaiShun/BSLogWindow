@@ -27,6 +27,11 @@ typedef void(^PrintBLock)(NSString *str);
  */
 + (void)clear;
 
+
+/**
+ 设置隐藏
+ */
+- (void)setHiddenWindow;
 @end
 
 
