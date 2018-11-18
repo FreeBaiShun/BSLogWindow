@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 typedef void(^PrintBLock)(NSString *str);
+typedef NS_ENUM(NSUInteger, BSLogType) {
+    BSLogTypeScreen,
+    BSLogTypeConsole,
+    BSLogTypeAll,
+};
 
 @interface BSLogWindow : UIView
 
@@ -29,9 +34,12 @@ typedef void(^PrintBLock)(NSString *str);
 
 
 /**
- 设置隐藏
+ 输出文字到指定位置
+
+ @param str 字串
+ @param type 输出位置类型
  */
-- (void)setHiddenWindow;
++ (void)BSLog:(NSString *)str type:(BSLogType)type;
 @end
 
 

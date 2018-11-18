@@ -55,16 +55,6 @@ static BSLogWindow *instance = nil;
     UIButton *btnShow;
 }
 
-+ (void)load{
-#if DEBUG
-    [[self class]sharedInstance];
-#endif
-}
-
-- (void)setHiddenWindow{
-    [self setHidden:YES];
-    [viewWindowBtn setHidden:YES];
-}
 
 /**
  单例
@@ -95,6 +85,7 @@ static BSLogWindow *instance = nil;
     textViewScreen.font = [UIFont systemFontOfSize:15.0f];
     textViewScreen.textColor = [UIColor whiteColor];
     textViewScreen.backgroundColor = [UIColor blackColor];
+    textViewScreen.showsVerticalScrollIndicator = YES;
     textViewScreen.scrollsToTop = NO;
     [self addSubview:textViewScreen];
     self.textView = textViewScreen;
@@ -160,7 +151,6 @@ static BSLogWindow *instance = nil;
         if ([UIApplication sharedApplication].keyWindow) {
             [[UIApplication sharedApplication].keyWindow addObserver:self forKeyPath:@"rootViewController" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:nil];
             [self setUpUI];
-            [self redirectSTD:STDERR_FILENO];
         }
     }
     
@@ -238,14 +228,16 @@ static BSLogWindow *instance = nil;
 
 //通过c语言中dup2函数映射到pipe端口，监听端口读取打印的文字显示在界面上。
 - (void)redirectSTD:(int)fd{
+ 
     NSPipe * pipe = [NSPipe pipe];
     NSFileHandle *pipeReadHandle = [pipe fileHandleForReading];
     int pipeFileHandle = [[pipe fileHandleForWriting] fileDescriptor];
     dup2(pipeFileHandle, fd);
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(redirectNotificationHandle:)name:NSFileHandleReadCompletionNotification
-                                                   object:pipeReadHandle];
-    [pipeReadHandle readInBackgroundAndNotify];
+                                             selector:@selector(redirectNotificationHandle:)name:NSFileHandleReadCompletionNotification
+                                               object:pipeReadHandle];
+    [pipeReadHandle readInBackgroundAndNotifyForModes:@[NSRunLoopCommonModes]];
+
 }
 - (void)redirectNotificationHandle:(NSNotification *)nf{
     NSData *data = [[nf userInfo] objectForKey:NSFileHandleNotificationDataItem];
@@ -255,9 +247,28 @@ static BSLogWindow *instance = nil;
     if(self.printBlock){
         self.printBlock(str);
     }
-    [[nf object] readInBackgroundAndNotify];
+
+    [[nf object] readInBackgroundAndNotifyForModes:@[NSRunLoopCommonModes]];
 }
 
++ (void)BSLog:(NSString *)str{
+    [BSLogWindow printLog:str];
+    BSLogWindow *bslogWindow = [BSLogWindow sharedInstance];
+    if(bslogWindow.printBlock){
+        bslogWindow.printBlock(str);
+    }
+}
+
++ (void)BSLog:(NSString *)str type:(BSLogType)type{
+    if (type == BSLogTypeScreen) {
+        [self BSLog:str];
+    }else if (type == BSLogTypeConsole){
+        NSLog(@"%@",str);
+    }else{
+        NSLog(@"%@",str);
+        [self BSLog:str];
+    }
+}
 
 /**
  返回打印的内容
@@ -271,7 +282,6 @@ static BSLogWindow *instance = nil;
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
     if (object == [UIApplication sharedApplication].keyWindow && [keyPath isEqualToString:@"rootViewController"]) {
         [self setUpUI];
-        [self redirectSTD:STDERR_FILENO];
     }
 }
 @end

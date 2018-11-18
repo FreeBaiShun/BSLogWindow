@@ -18,12 +18,8 @@
      self.window.rootViewController = [ViewController new];
      [self.window makeKeyAndVisible];
  
-     #if DEBUG && ShowLogWindow
+     #if ShowLogWindow && DEBUG
      BSLogWindow *logWindow = [BSLogWindow sharedInstance];
-     [logWindow setHidden:NO];
-     logWindow.printBlock = ^(NSString *str) {
-     //NSLog(@"str = %@",str);
-     };
      #endif
  
      return YES;

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1444AFD38CD0FB66C6DD8806 /* libPods-BSLogWindowTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C258F4A74190531CF3B6EA /* libPods-BSLogWindowTests.a */; };
-		3370E4A92174CC3800303C63 /* BSLogWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3370E4A82174CC3800303C63 /* BSLogWindow.m */; };
 		33ED122B2174AE3300335808 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33ED122A2174AE3300335808 /* AppDelegate.m */; };
 		33ED122E2174AE3300335808 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33ED122D2174AE3300335808 /* ViewController.m */; };
 		33ED12312174AE3300335808 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33ED122F2174AE3300335808 /* Main.storyboard */; };
@@ -42,8 +41,6 @@
 		0EFD67B982242355A4276131 /* Pods-BSLogWindowUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSLogWindowUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BSLogWindowUITests/Pods-BSLogWindowUITests.release.xcconfig"; sourceTree = "<group>"; };
 		17497020F5F9BF95EB8D3020 /* Pods-BSLogWindowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSLogWindowTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSLogWindowTests/Pods-BSLogWindowTests.debug.xcconfig"; sourceTree = "<group>"; };
 		217AAA671B8A21C98F4F7C93 /* libPods-BSLogWindowUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSLogWindowUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3370E4A72174CC3800303C63 /* BSLogWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSLogWindow.h; sourceTree = "<group>"; };
-		3370E4A82174CC3800303C63 /* BSLogWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSLogWindow.m; sourceTree = "<group>"; };
 		33ED12262174AE3300335808 /* BSLogWindow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSLogWindow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33ED12292174AE3300335808 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		33ED122A2174AE3300335808 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -99,8 +96,6 @@
 		3370E4A62174CC3800303C63 /* BSLogWindow */ = {
 			isa = PBXGroup;
 			children = (
-				3370E4A72174CC3800303C63 /* BSLogWindow.h */,
-				3370E4A82174CC3800303C63 /* BSLogWindow.m */,
 			);
 			path = BSLogWindow;
 			sourceTree = "<group>";
@@ -381,7 +376,6 @@
 				33ED122E2174AE3300335808 /* ViewController.m in Sources */,
 				33ED12392174AE3300335808 /* main.m in Sources */,
 				33ED122B2174AE3300335808 /* AppDelegate.m in Sources */,
-				3370E4A92174CC3800303C63 /* BSLogWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
