@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "BSLogWindow.h"
 
 @interface ViewController ()
 
@@ -29,7 +30,7 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
     
-    NSLog(@"Hello %@",@"BSLogWindow");
+    [BSLogWindow BSLog:[NSString stringWithFormat:@"Hello %@",@"BSLogWindow"] type:BSLogTypeAll];//控制台和屏幕都要打印
 }
 
 @end

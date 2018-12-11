@@ -12,6 +12,14 @@
 
 #define HiddenLogWindow 0
 
+#ifdef DEBUG // 开发
+#define BSLogWindowShow 1
+
+#else // 生产
+#define BSLogWindowShow 0
+
+#endif
+
 @interface AppDelegate ()
 
 @end
@@ -25,9 +33,8 @@
     self.window.rootViewController = [ViewController new];
     [self.window makeKeyAndVisible];
     
-#ifdef HiddenLogWindow
-    [[BSLogWindow sharedInstance] setHiddenWindow];
-#endif
+    //BSLogWindow（控制显示）
+    [BSLogWindow showWindow:BSLogWindowShow];
     return YES;
 }
 
