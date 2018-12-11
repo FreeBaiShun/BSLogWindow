@@ -1,0 +1,16 @@
+PODS:
+  - WMDragView (1.0.0)
+
+DEPENDENCIES:
+  - WMDragView
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - WMDragView
+
+SPEC CHECKSUMS:
+  WMDragView: d8f98a0d14d8581bbefebb2a1ddb6b5b87c283e6
+
+PODFILE CHECKSUM: 869f0d72ec0610c6b061aae93330d08b675a2390
+
+COCOAPODS: 1.5.3
