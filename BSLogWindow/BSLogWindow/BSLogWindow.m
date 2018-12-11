@@ -61,7 +61,6 @@ static int showLogWindow;
     }else{
         showLogWindow = 0;
     }
-    
     [self sharedInstance];
 }
 
