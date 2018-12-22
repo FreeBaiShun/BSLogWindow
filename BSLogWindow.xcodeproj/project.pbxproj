@@ -19,6 +19,8 @@
 		40C0FB7D3EAC6E335FE67587 /* libPods-BSLogWindow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC3A9F43AA9F7B262D30667 /* libPods-BSLogWindow.a */; };
 		4B8C7462DCCF958D852BB753 /* libPods-BSLogWindowUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 217AAA671B8A21C98F4F7C93 /* libPods-BSLogWindowUITests.a */; };
 		B0BE429B21BE4B670017AE1D /* BSLogWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B0BE429A21BE4B670017AE1D /* BSLogWindow.m */; };
+		B0E5AC2521CDE57700C6CDFB /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E5AC2121CDE57700C6CDFB /* YYFPSLabel.m */; };
+		B0E5AC2621CDE57700C6CDFB /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E5AC2321CDE57700C6CDFB /* YYWeakProxy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,10 @@
 		56C258F4A74190531CF3B6EA /* libPods-BSLogWindowTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSLogWindowTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0BE429921BE4B670017AE1D /* BSLogWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSLogWindow.h; sourceTree = "<group>"; };
 		B0BE429A21BE4B670017AE1D /* BSLogWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSLogWindow.m; sourceTree = "<group>"; };
+		B0E5AC2121CDE57700C6CDFB /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		B0E5AC2221CDE57700C6CDFB /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
+		B0E5AC2321CDE57700C6CDFB /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
+		B0E5AC2421CDE57700C6CDFB /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
 		B1437BC89D653C0CA766940E /* Pods-BSLogWindow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSLogWindow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSLogWindow/Pods-BSLogWindow.debug.xcconfig"; sourceTree = "<group>"; };
 		BFC3A9F43AA9F7B262D30667 /* libPods-BSLogWindow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSLogWindow.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6F5CC92F11B521D90962D72 /* Pods-BSLogWindowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSLogWindowTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BSLogWindowTests/Pods-BSLogWindowTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +107,10 @@
 			children = (
 				B0BE429921BE4B670017AE1D /* BSLogWindow.h */,
 				B0BE429A21BE4B670017AE1D /* BSLogWindow.m */,
+				B0E5AC2221CDE57700C6CDFB /* YYFPSLabel.h */,
+				B0E5AC2121CDE57700C6CDFB /* YYFPSLabel.m */,
+				B0E5AC2421CDE57700C6CDFB /* YYWeakProxy.h */,
+				B0E5AC2321CDE57700C6CDFB /* YYWeakProxy.m */,
 			);
 			path = BSLogWindow;
 			sourceTree = "<group>";
@@ -379,6 +389,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				33ED122E2174AE3300335808 /* ViewController.m in Sources */,
+				B0E5AC2521CDE57700C6CDFB /* YYFPSLabel.m in Sources */,
+				B0E5AC2621CDE57700C6CDFB /* YYWeakProxy.m in Sources */,
 				33ED12392174AE3300335808 /* main.m in Sources */,
 				33ED122B2174AE3300335808 /* AppDelegate.m in Sources */,
 				B0BE429B21BE4B670017AE1D /* BSLogWindow.m in Sources */,
@@ -548,6 +560,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TE7JH4FV3T;
 				INFOPLIST_FILE = BSLogWindow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.BSLogWindow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -563,6 +576,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TE7JH4FV3T;
 				INFOPLIST_FILE = BSLogWindow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.BSLogWindow;
 				PRODUCT_NAME = "$(TARGET_NAME)";

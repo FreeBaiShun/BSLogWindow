@@ -7,6 +7,7 @@
 //
 
 #import "BSLogWindow.h"
+#import "YYFPSLabel.h"
 #import <WMDragView/WMDragView.h>
 
 #define BSLogWindowSereenWidth [UIScreen mainScreen].bounds.size.width
@@ -34,10 +35,7 @@ static int showLogWindow;
     
     return model;
 }
-
 @end
-
-
 
 /**
  BSLogWindow
@@ -120,14 +118,16 @@ static int showLogWindow;
     longPressGR.minimumPressDuration = 1.5;
     [viewWindowBtn addGestureRecognizer:longPressGR];
     
+    YYFPSLabel *labFPS = [[YYFPSLabel alloc] initWithFrame:CGRectMake(0, 0, viewWindowBtn.frame.size.width, viewWindowBtn.frame.size.height)];
+    [viewWindowBtn addSubview:labFPS];
+    
     if (!btnShow) {
         btnShow = [[UIButton alloc] initWithFrame:viewWindowBtn.bounds];
     }
-    
-    btnShow.backgroundColor = [UIColor orangeColor];
+    btnShow.backgroundColor = [UIColor clearColor];
     [btnShow setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     btnShow.titleLabel.font = [UIFont systemFontOfSize:13.0];
-    [btnShow setTitle:@"日志" forState:UIControlStateNormal];
+    [btnShow setTitle:@"" forState:UIControlStateNormal];
     btnShow.userInteractionEnabled = NO;
     [viewWindowBtn addSubview:btnShow];
     [window addSubview:viewWindowBtn];
